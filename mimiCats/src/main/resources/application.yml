@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      format_sql: true
+#      security:
+#        user:
+#          name: user
+#          password: user
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mimicats
+    username: postgres
+    password: 1
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      auto-commit: false
