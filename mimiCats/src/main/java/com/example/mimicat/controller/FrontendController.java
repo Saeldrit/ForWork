@@ -8,7 +8,7 @@ public class FrontendController {
 
     @GetMapping
     public String startPage() {
-        return "/registration/signUp";
+        return "/registration/signIn";
     }
 
     @GetMapping("/cat-add")

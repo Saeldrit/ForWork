@@ -31,21 +31,28 @@ public class CatController {
         return "cats/results";
     }
 
+    @GetMapping("/cats-admin")
+    public String getAllCat(Model model) {
+        List<Cat> cats = catService.getAll();
+        model.addAttribute("cats", cats);
+        return "cats/cats_admin";
+    }
+
     @PostMapping("/cat-add")
     public String catAdd(Cat cat) {
         catService.addCat(cat);
-        return "redirect:/cats";
+        return "redirect:/cat-add";
     }
 
     @PostMapping("/cats/{cat-id}/delete")
     public String deleteCat(@PathVariable("cat-id") Integer id) {
         catService.deleteCat(id);
-        return "redirect:/cats";
+        return "redirect:/cats-admin";
     }
 
     @PostMapping("/cats/{cat-id}/like")
-    public String countLike(@PathVariable("cat-id") Integer id) {
-        catService.countLike(id);
+    public String countLike(@PathVariable("cat-id") Integer catId) {
+        catService.countLike(catId);
         return "redirect:/cats";
     }
 }

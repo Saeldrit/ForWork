@@ -28,14 +28,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/cats").authenticated()
                 .antMatchers("/results").authenticated()
+                .antMatchers("/cats/{cat-id}/like").authenticated()
                 .antMatchers("/cats/**").hasAuthority("ADMIN")
+                .antMatchers("/cats-admin").hasAuthority("ADMIN")
                 .antMatchers("/signUp").permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")
                 .defaultSuccessUrl("/cats")
                 .usernameParameter("login")
-                .passwordParameter("password")
+                .passwordParameter("hashPassword")
                 .permitAll();
     }
 }

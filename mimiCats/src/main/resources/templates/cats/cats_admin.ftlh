@@ -20,9 +20,9 @@
             <th>Рейтинг</th>
             <th>Лайки</th>
             <th>Фото</th>
+            <th>Просит есть?</th>
         </tr>
         </thead>
-
         <tbody>
             <#if cats ? has_content>
                 <#list cats as cat>
@@ -33,6 +33,13 @@
                         <td>
                             <img src="${(cat.url)!}" alt=""/>
                         </td>
+                        <td>
+                          <span class="action_btn">
+                              <form method="post" action="/cats/${(cat.catId)!}/delete">
+                                  <button type="submit">Ты свободен</button>
+                              </form>
+                          </span>
+                        </td>
                     </tr>
                 </#list>
             </#if>
@@ -40,9 +47,9 @@
     </table>
 </div>
 
-<a href="/cats" class="cats">Голосование</a>
-<a href="/results" class="results">Результаты</a>
-<a href="/cats-admin" class="registration">Админ</a>
+<a href="/results" class="cats">Результаты</a>
+<a href="/cat-add" class="results">Добавить</a>
+<a href="/users" class="registration">Пользователи</a>
 <a href="/signIn" class="admin">Выйти</a>
 
 </body>
