@@ -11,15 +11,12 @@ import javax.persistence.*;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @Entity
-@Table(name = "cats")
-public class Cat {
+@Table(name = "likes")
+public class Like {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer catId;
+    private Integer likeId;
 
-    private String name;
-    private String url;
-    private Integer rating;
-    private Integer countLike;
+    private String combination;
 }

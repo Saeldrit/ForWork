@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class User {
 
     public enum Role {
-        ADMIN, USER;
+        ADMIN, USER
     }
 
     @Enumerated(value = EnumType.STRING)
