@@ -9,7 +9,8 @@
 
 
 - The menu is intuitive.
-###Enjoy watching cats and choose the best ones.
+
+**Enjoy watching cats and choose the best ones.**
 
 When you launch the application, the **@PostConstruct** annotation
  will launch a method that will collect a list of test cats and an administrator for you.
